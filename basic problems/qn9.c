@@ -4,18 +4,12 @@ void main() {
 	char name[25];
 	printf("Enter the string >> ");
 	scanf("%s",name);
-	int total_length = strlen(name);
-	int num_of_alphabet = total_length;
-	for (int i = 0; i < total_length; ++i)
+	int count = 0;
+	for (int i = 0; i < strlen(name); ++i)
 	{
-		int count = 0;
-		for (int j = i+1; j < total_length; ++j)
-		{
-			if (name[i]==name[j]) {
-				count++;
-			}
+		if (((name[i] <= 122) && (name[i] >= 97))||((name[i]>=65) && (name[i]<=90))) {
+         count++;			
 		}
-		num_of_alphabet = num_of_alphabet - count;
 	}
-	printf("\nThe given string contains %d")
+	printf("The total no of alphabets used here is %d\n",count);
 }
