@@ -1,18 +1,20 @@
-// finding the single element in the given array
+// finding the second largest number
 #include <stdio.h>
 void main() {
-   int elements[7] = {33,33,1,2,8,1,2};
-   for (int i = 0; i < 7; ++i)
-   {
-   	  int count = 0;
-      for (int j = 0; j < 7; ++j)
+      int array[5] = {55,87,12,87,90};
+      int sec_largest = 0;
+      for (int i = 0; i < 5; ++i)
       {
-      	if (elements[i]==elements[j]) {
-      		count++;
+      	int count = 0;
+      	for (int j = 0; j < 5; ++j)
+      	{
+      		if (array[i]>=array[j]) {
+      			count++;
+      		}
+      	}
+      	if (count == 4) {
+      		printf("Second largest number in the given array is %d\n",array[i]);
+      		break;
       	}
       }
-      if (count == 1) {
-      	printf("The single element in the given array is %d\n",elements[i]);
-      }
-   }
 }
